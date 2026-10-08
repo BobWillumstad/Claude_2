@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Drive St. Thomas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="game"></div>
+
+  <header class="topbar">
+    <div class="topbar-title">Drive the U.S. Virgin Islands</div>
+    <div class="topbar-place"><span id="area">St. Thomas</span><span id="road"></span></div>
+  </header>
+
+  <div id="speedo" class="card">
+    <div id="speed">0</div>
+    <div class="unit">MPH</div>
+  </div>
+
+  <div class="keep-left">Keep <b>LEFT</b></div>
+  <div id="warn">⚠ Wrong side — keep LEFT!</div>
+  <div id="toast"></div>
+
+  <canvas id="minimap" title="Press M for the full map"></canvas>
+
+  <div id="touch">
+    <div class="pad">
+      <button data-key="left">◀</button><button data-key="right">▶</button>
+    </div>
+    <div class="pad">
+      <button data-key="brake">⏸</button><button data-key="down">▼</button><button data-key="up">▲</button>
+    </div>
+  </div>
+
+  <div id="loading" class="overlay">
+    <div class="panel card">
+      <div class="eyebrow">U.S. Virgin Islands · St. Thomas</div>
+      <h1>Drive St. Thomas</h1>
+      <p id="loading-status">Loading…</p>
+    </div>
+  </div>
+
+  <div id="start" class="overlay hidden">
+    <div class="panel card">
+      <div class="eyebrow">U.S. Virgin Islands · St. Thomas</div>
+      <h1>Drive St. Thomas</h1>
+      <p>Cruise from Charlotte Amalie up to Mountain Top, over to Magens Bay and out to Red Hook. Remember: in the Virgin Islands we drive on the <b>left</b>.</p>
+      <div class="keys">
+        <div><kbd>W</kbd><kbd>↑</kbd> Gas</div>
+        <div><kbd>S</kbd><kbd>↓</kbd> Brake / reverse</div>
+        <div><kbd>A</kbd><kbd>D</kbd> Steer</div>
+        <div><kbd>Space</kbd> Handbrake</div>
+        <div><kbd>C</kbd> Look back</div>
+        <div><kbd>H</kbd> Honk</div>
+        <div><kbd>M</kbd> Island map</div>
+        <div><kbd>R</kbd> Back to road</div>
+        <div><kbd>N</kbd> Sound on/off</div>
+        <div><kbd>Esc</kbd> Pause</div>
+      </div>
+      <button id="start-btn" class="pill">Start Driving</button>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
